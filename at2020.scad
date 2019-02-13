@@ -12,8 +12,8 @@ rubber_spacing = 20;
 
 linear_extrude(ring_width) {
     difference() {
-        circle(inner_radius+ring_width);
-        circle(inner_radius);
+        circle(inner_radius+ring_width,$fn=500);
+        circle(inner_radius,$fn=500);
         
         translate([0,square_translation,0])
         square(bar_width,true);
@@ -40,9 +40,9 @@ linear_extrude(bar_width) {
                 translate([-ring_width+nick_depth,0,0])
                 square(ring_width,true);
                 translate([bar_width/3*2,rubber_spacing/2,0])
-                circle(rubber_radius);
+                circle(rubber_radius,$fn=500);
                 translate([bar_width/3*2,-rubber_spacing/2,0])
-                circle(rubber_radius);
+                circle(rubber_radius,$fn=500);
             }
         }
     }
